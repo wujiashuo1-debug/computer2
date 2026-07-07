@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>计算机网络名词解释连线练习</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="eyebrow">Computer Network Review</p>
+      <h1>计算机网络名词解释连线练习</h1>
+      <p class="subtitle">只收录文档中的“名词解释”。选择题、判断题已排除。适合期末连线题反复刷。</p>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="panel controls" aria-label="练习设置">
+      <div class="control-grid">
+        <label>
+          <span>章节</span>
+          <select id="chapterSelect"></select>
+        </label>
+        <label>
+          <span>每轮题数</span>
+          <select id="countSelect">
+            <option value="6">6 题</option>
+            <option value="8" selected>8 题</option>
+            <option value="10">10 题</option>
+            <option value="15">15 题</option>
+            <option value="20">20 题</option>
+            <option value="all">本章全部</option>
+          </select>
+        </label>
+        <label>
+          <span>练习范围</span>
+          <select id="modeSelect">
+            <option value="random" selected>随机练习</option>
+            <option value="mistakes">只练错题</option>
+            <option value="sequential">按原文顺序</option>
+          </select>
+        </label>
+      </div>
+      <div class="actions">
+        <button id="newRoundBtn" class="primary">生成新一轮</button>
+        <button id="checkBtn">批改</button>
+        <button id="answerBtn">显示答案</button>
+        <button id="clearBtn">清空连线</button>
+        <button id="printBtn">打印当前题</button>
+      </div>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section class="panel guide">
+      <h2>怎么练</h2>
+      <p>先点左边名词，再点右边释义，系统会记录一条连线。批改后红色是错配，绿色是正确。真正考试不会给你花里胡哨的提示，所以别只背关键词，要能认出完整定义。</p>
+    </section>
+
+    <section class="board" aria-label="连线练习区">
+      <div class="column">
+        <div class="column-head">
+          <h2>名词</h2>
+          <span id="termCount"></span>
+        </div>
+        <div id="terms" class="card-list"></div>
+      </div>
+      <div class="column">
+        <div class="column-head">
+          <h2>释义</h2>
+          <span>已打乱</span>
+        </div>
+        <div id="definitions" class="card-list"></div>
+      </div>
+    </section>
+
+    <section class="panel result" id="resultPanel" hidden>
+      <h2>批改结果</h2>
+      <div id="scoreLine" class="score-line"></div>
+      <div id="mistakeList" class="mistake-list"></div>
+    </section>
+
+    <section class="panel bank">
+      <details>
+        <summary>查看全部名词库</summary>
+        <div id="bankList" class="bank-list"></div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>GitHub Pages 静态版 · 不需要后端 · 数据保存在浏览器本地</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
